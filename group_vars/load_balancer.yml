@@ -1,0 +1,6 @@
+---
+- name: haproxy load balancer layer veriables
+  vars:
+    load_balancer_packages:
+      - haproxy
+
