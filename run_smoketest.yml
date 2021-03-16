@@ -1,0 +1,16 @@
+---
+- name: Deploy, configure, and populate flask repo and virtualenv
+  hosts: app_servers:databases_server
+  become: true
+  gather_facts: false
+  roles:
+   - role: smoketest
+     tags: smoketest_app_db
+
+- name: Deploy, configure, and populate flask repo and virtualenv app servers
+  hosts: app_servers
+  become: true
+  gather_facts: false
+  roles: 
+   - role: smoketest
+     tags: smoketest_app 
